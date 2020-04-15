@@ -5,8 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
+      <th>タイトル</th>
+      <th>本文</th>
+      <th>ユーザー</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= blog.title %></td>
         <td><%= blog.content %></td>
+        <td><%= blog.user.name %></td>
         <td><%= link_to 'Show', blog %></td>
         <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
         <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Blog', new_blog_path %>
+<%= link_to '新規ブログ投稿', new_blog_path %>

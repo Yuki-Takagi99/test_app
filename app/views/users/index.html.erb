@@ -1,0 +1,21 @@
+<h2>ユーザー一覧</h2>
+
+<table class="table table-border">
+  <thead>
+    <tr>
+      <th>ユーザー名</th>
+      <th>メールアドレス</th>
+      <th>つながり</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= render 'follow_form', user: user %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

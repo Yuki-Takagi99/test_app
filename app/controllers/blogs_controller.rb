@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  before_action :must_login, only: [:index, :new, :show, :edit, :update, :destroy]
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   # GET /blogs
@@ -19,6 +20,9 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1/edit
   def edit
+    if current_user.id != @blog.user.id
+      redirect_to blogs_path
+    end
   end
 
   # POST /blogs

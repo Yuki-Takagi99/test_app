@@ -1,4 +1,17 @@
-<h1>マイページ</h1>
+<h1>ユーザー詳細</h1>
 <p>ユーザー名: <%= @user.name %></p>
 <p>メールアドレス: <%= @user.email %></p>
+
+<p>フォローしているユーザー:
+  <% @user.following.each do |following| %>
+    <%= following.name %>
+  <% end %>
+</p>
+
+<p>フォローされているユーザー:
+  <% @user.followers.each do |follower| %>
+    <%= follower.name %>
+  <% end %>
+</p>
+
 <%= link_to 'ブログ一覧', blogs_path %>

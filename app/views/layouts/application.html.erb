@@ -10,9 +10,6 @@
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
     <% if logged_in? %>
       <%= link_to "マイページ", user_path(current_user.id) %>
       <%= link_to 'ユーザー一覧', users_path if logged_in? %>
